@@ -1,0 +1,44 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- index.html                                         :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: skihara <skihara@student.42tokyo.j>        +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2021/01/01 16:56:17 by skihara           #+#    #+#            -->
+<!-- Updated: 2021/01/01 16:57:10 by skihara          ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <series-item
+        v-for="List in NetflixList"
+        :series="List"
+      ></series-item>
+    </div>
+
+    <script>
+      Vue.component("series-item", {
+        props: ["series"],
+        template: "<h2>{{ series.text }}</h2>"
+      });
+      var app = new Vue({
+        el: "#app",
+        data: {
+          NetflixList: [
+            { id: 0, text: "Queen's Gambit" },
+            { id: 1, text: "Altered Carbon" },
+            { id: 2, text: "Black Mirror" }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>

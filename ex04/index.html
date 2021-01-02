@@ -1,0 +1,38 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- index.html                                         :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: skihara <skihara@student.42tokyo.j>        +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2021/01/01 15:54:54 by skihara           #+#    #+#            -->
+<!-- Updated: 2021/01/02 23:03:55 by skihara          ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <hello></hello>
+	  {{ message }}
+	</div>
+
+    <script>
+      Vue.component("hello", {
+        template: "<h1>Hello Vue!</h1>"
+      });
+      
+      var app = new Vue({
+        el: "#app",
+		data: {
+			message: "Hello Vue!"
+		}
+      });
+    </script>
+  </body>
+</html>
